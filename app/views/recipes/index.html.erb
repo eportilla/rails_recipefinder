@@ -1,7 +1,15 @@
+<%= form_tag(recipes_index_path, method: "get") do %>
+	<%= text_field_tag(:search) %>
+	<%= submit_tag("Search") %>
+<% end %>
+
 <h1>Searching for - <%= @search %></h1>
 
-<%= will_paginate @recipes %>
+<div class="digg_pagination">
+	<%= will_paginate @recipes %>
+</div>
 <br>
+
 <table border="1">
 	<tr>
 		<th>Image</th>
@@ -18,7 +26,9 @@
 </table>
 
 <br>
-<%= will_paginate @recipes %>
+<div class="digg_pagination">
+	<%= will_paginate @recipes %>
+</div>
 <br>
 
 <p>Powered By Food2Fork.com</p>
