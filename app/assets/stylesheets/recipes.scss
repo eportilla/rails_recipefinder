@@ -5,21 +5,41 @@
 // Search Bar
 
 .search_bar {
-	#search {
-		width: 500px;
-		height: 30px;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 16px;
-		border: 2px solid #2e6ab1;
-	}
-	#search:hover, #search.focus {
-		border-color: #000033;
-	}
-}
+	width: 80%;
+	margin: auto;
+	padding-left: 20%; 
+	padding-top: 1%; }
+
+.search_bar input {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px; }
+
+	.inputbox {
+		width: 75%;
+		border: 3px solid #2e6ab1; }
+
+	.inputbutton {
+		background: #2e6ab1;
+		color: white; }
+
+	.inputbox:hover, .inputbox:focus {
+		border-color: #000033; }
+
+	.inputbutton:hover, .inputbutton:focus {
+		border-color: white;
+		color: #000033; }
+
+
+// digg_pagination class is the CSS definition from the 
+// Digg page pagination
+
 .digg_pagination {
   background: white;
   cursor: default;
+  margin: auto;
+  width: 50%;
+  padding-left: 20%;
   /* self-clearing method: */ }
 
   .digg_pagination a, .digg_pagination span, .digg_pagination em {
@@ -48,6 +68,21 @@
       color: #000033;
       border-color: #000033; }
 
+  .digg_pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+
+  * html .digg_pagination {
+    height: 1%; }
+  *:first-child + html .digg_pagination {
+    overflow: hidden; }
+
+
+// Currently page_info class is not being used
+
   .digg_pagination .page_info {
     background: #2e6ab1;
     color: white;
@@ -61,14 +96,27 @@
       background: #6aa6ed;
       padding: 0.1em 0.25em; }
 
-  .digg_pagination:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
+h1 {
+	background: white;
+	color: slategray;
+	text-align: center; }
 
-  * html .digg_pagination {
-    height: 1%; }
-  *:first-child + html .digg_pagination {
-    overflow: hidden; }
+p {
+	background: #2e6ab1;
+	color: white;
+	text-align: center; }
+
+table {
+	border-collapse: collapse;
+	width: 75%; 
+	margin-left: auto;
+	margin-right: auto; }
+
+	td, th {
+	border-bottom: 1px solid gray; 
+	text-align: left;
+	font-size: 16px;
+	font-style: normal; }
+
+	tr:hover {
+		background-color: lightgray; }
