@@ -5,32 +5,38 @@
 	</div>
 <% end %>
 
-<h1>Searching for - <%= @search %></h1>
+<% if @recipes.present? %>
+	<h1>Searching for - <%= @search %></h1>
+<% else %>
+	<h1>Could not find recipes for <%=@search %></h1>
+<% end %>
 
 <div class="digg_pagination">
 	<%= will_paginate @recipes %>
 </div>
 <br>
 
-<table>
-	<tr>
-		<th>Image</th>
-		<th>Title</th>
-		<th>Social Rank</th>
-	</tr>
-	<% @recipes.each do |recipe| %>
+<% if @recipes.present? %>
+	<table>
 		<tr>
-			<td><%= link_to image_tag(recipe["image_url"], width: "100", height: "100"), recipe["source_url"] %></td>
-			<td><%= link_to sanitize(recipe["title"]), recipe["source_url"] %></td>
-			<td><%= recipe["social_rank"] %></td>
+			<th>Image</th>
+			<th>Title</th>
+			<th>Social Rank</th>
 		</tr>
-	<% end %>
-</table>
-
+		<% @recipes.each do |recipe| %>
+			<tr>
+				<td><%= link_to image_tag(recipe["image_url"], width: "100", height: "100"), recipe["source_url"] %></td>
+				<td><%= link_to sanitize(recipe["title"]), recipe["source_url"] %></td>
+				<td><%= recipe["social_rank"] %></td>
+			</tr>
+		<% end %>
+	</table>
+<% end %>
 <br>
+
 <div class="digg_pagination">
 	<%= will_paginate @recipes %>
 </div>
 <br>
 
-<p>Powered By Food2Fork.com</p>
+<h5>Powered By Food2Fork.com</h5>
