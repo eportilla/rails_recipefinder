@@ -8,8 +8,13 @@ class Recipe
 	format :json
 
 	def self.for recipe
-		get("/search", query: { q: recipe })["recipes"]
-		#recipes is the json element name
+		begin
+			get("/search", query: { q: recipe })["recipes"]
+			#recipes is the json element name
+		rescue
+			@recipes = nil
+		end
+		
 	end
 
 end

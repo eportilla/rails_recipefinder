@@ -4,11 +4,19 @@ class RecipesController < ApplicationController
   def index
   	# Rails method to check nil, empty
   	if params[:search].blank?
-  		@search = "chocolate" # default value
-  	else
-  		@search = params[:search]
-  	end
-  	@search_for = Recipe.for(@search)|| [] # if returns nil is emty array
-  	@recipes = @search_for.paginate(page: params[:page], per_page: 5)
+      @search = "chocolate" # load default search
+    else
+      @search = params[:search]
+    end
+
+    @search_for = Recipe.for(@search)|| [] # if returns nil is emty array
+
+    if @search_for.present?
+      @recipes = @search_for.paginate(page: params[:page], per_page: 5)
+    else
+      @recipes = []
+    end
+
   end
+
 end
