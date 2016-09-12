@@ -39,7 +39,7 @@
   cursor: default;
   margin: auto;
   width: 50%;
-  padding-left: 20%;
+  /*padding-left: 20%;
   /* self-clearing method: */ }
 
   .digg_pagination a, .digg_pagination span, .digg_pagination em {
@@ -96,13 +96,13 @@
       background: #6aa6ed;
       padding: 0.1em 0.25em; }
 
-h1 {
+h2 {
 	background: white;
 	color: slategray;
 	text-align: center; }
 
 h5 {
-	background: #2e6ab1;
+	background: #2eaadf;
 	color: white;
 	text-align: center; }
 
@@ -120,3 +120,8 @@ table {
 
 	tr:hover {
 		background-color: lightgray; }
+
+.jumbotron {
+  background-color: #2eaadf;
+  color: white;
+}
