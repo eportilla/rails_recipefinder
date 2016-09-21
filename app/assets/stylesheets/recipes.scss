@@ -107,6 +107,30 @@ table {
 		background-color: lightgray; }
     */
 
+.thumbnail {
+  width: 300px;
+  height: 250px;
+  text-align: center;
+  margin: 10px 10px 10px 10px;
+  padding-top: 10%;
+  overflow: hidden;
+  float: left;
+}
+
+.thumbnail img {
+  width: 100px;
+  height: 100px;
+}
+
+.thumbnail:hover {
+  background-color: #2e6ab1;
+  opacity: 0.6;
+
+  .caption h4 {
+    color: white;
+  }
+}
+
 .jumbotron {
   background-color: #2eaadf;
   color: white;
