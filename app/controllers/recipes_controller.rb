@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
     @search_for = Recipe.for(@search)|| [] # if returns nil is emty array
 
     if @search_for.present?
-      @recipes = @search_for.paginate(page: params[:page], per_page: 5)
+      @recipes = @search_for.paginate(page: params[:page], per_page: 9)
     else
       @recipes = []
     end

@@ -2,7 +2,7 @@
 	<div class="row row-content">
 		<div class="col-xs-12 col-sm-9 col-sm-offset-3">
 			<%= form_tag(recipes_index_path, method: "get") do %>
-				<%= text_field_tag(:search, "#{@search}", placeholder: "recipe name", class: "inputbox", autofocus: true) %>
+				<%= text_field_tag(:search, "#{@search}", placeholder: "recipe name", class: "inputbox") %>
 				<%= button_tag(type: "submit", class: "btn btn-primary btn-sm") do %>
 					<span class="glyphicon glyphicon-search"></span>
 				<% end %>
